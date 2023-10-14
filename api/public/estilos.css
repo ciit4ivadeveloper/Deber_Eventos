@@ -1,0 +1,71 @@
+/* Estilo para los campos de entrada de texto */
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para los botones */
+  button {
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para etiquetas de formulario */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Estilo para el fondo de la tabla */
+  table {
+    background-color: #f0f0f0;
+    border-collapse: collapse;
+    width: 20%;
+  }
+  
+  /* Estilo para las celdas de la tabla */
+  td {
+    padding: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Cambiar el fondo de un campo de entrada específico con el ID "ruc" */
+  #ruc {
+    background-color: #ffffcc;
+  }
+
+  /* Estilo para el combo box */
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 220px; /* Ancho del combo box */
+    font-size: 16px; /* Tamaño de fuente */
+    background-color: #f0f0f0; /* Color de fondo */
+    color: #333; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el combo box */
+  }
+  
+  /* Estilo para las opciones del combo box */
+  select option {
+    padding: 5px;
+    background-color: #fff; /* Color de fondo de las opciones */
+    color: #333; /* Color del texto de las opciones */
+  }
+  
+  /* Estilo para el combo box cuando se enfoca (selecciona) */
+  select:focus {
+    border-color: #0074d9; /* Cambia el color del borde al enfocar */
+    outline: none; /* Quita el resplandor predeterminado al enfocar en algunos navegadores */
+  }
+  
+  /* Estilo para el combo box cuando se pasa el mouse sobre las opciones */
+  select option:hover {
+    background-color: #0074d9; /* Cambia el color de fondo al pasar el mouse */
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+  }

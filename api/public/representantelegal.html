@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REPRESENTANTE LEGAL</title>
+        <link rel="stylesheet" type="text/css" href="estilos.css" />
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+          <center>
+            <label for="ruc"><h2>REPRESENTANTE LEGAL</h2></label></td> 
+            <table>
+                <tr>
+                  <td><label for="ruc">Ruc:</label></td>
+                  <td><input type="text" id="ruc" value=""/></td>
+                </tr>
+                <tr>
+                  <td><label for="cedula">Cedula:</label></td>
+                  <td><input type="text" id="cedula" value="" class="input" /></td>
+                </tr>
+                <tr>
+                  <td><label for="nombre">Nombre:</label></td>
+                  <td><input type="text" id="nombre" value=""  class="input"/></td>
+                </tr>
+                <tr>
+                  <td><label for="apellido">Apellido:</label></td>
+                  <td><input type="text" id="apellido" value="" class="input" /></td>
+                </tr>
+                <tr>
+                  <td><label for="email">Email:</label></td>
+                  <td><input type="text" id="email" value="" class="input" /></td>
+                </tr>
+                <tr>
+                  <td><label for="domicilio">Domicilio:</label></td>
+                  <td><input type="text" id="domicilio" value=""  class="input"/></td>
+                </tr>
+                <tr>
+                  <td><label for="telefono">Telefono:</label></td>
+                  <td><input type="text" id="telefono" value=""  class="input"/></td>
+                </tr>
+                <tr> 
+                  <td><label for="empresa">Empresa:</label></td>
+                  <td><select id="empresa" name="empresa">
+                      <option value="" disabled selected>Selecciona una empresa</option>
+                      </select>
+                      <script>
+                        // Función para cargar opciones en el combo
+                        function cargarCombo() {
+                            var comboBox = document.getElementById("empresa"); 
+                            
+
+                            // Realizar una solicitud GET al servicio (supongamos que utiliza fetch)
+                            fetch('/empresa')
+                                .then(response => response.json())
+                                .then(data => {
+                                    // Iterar a través de los datos del servicio y agregar opciones al combo box
+                                    data.body.forEach(empresa => {
+                                        var option = document.createElement("option");
+                                        option.value = empresa._id; // El valor que se enviará al servidor
+                                        option.text = empresa.nombre; // El texto que se mostrará al usuario
+                                        comboBox.appendChild(option);
+                                    });
+                                    console.error('Entro:', error);
+                                })
+                                .catch(error => {
+                                    console.error('Error al obtener datos:', error);
+                                });
+                        }
+                        
+                        // Llama a la función para cargar el combo cuando se carga la página
+                        cargarCombo();
+                        </script>
+
+
+
+                  </td> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                      <button onclick="guardar_producto()" class="button">Guardar</button>
+                      <button onclick="cancelar_producto()" class="button">Cancelar</button>
+                    </td>
+                  </tr>
+              </table>
+            </center>
+    
+    </body>
+</html>
