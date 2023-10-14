@@ -59,5 +59,25 @@ function listar_empresa() {
         });
 }
  
+function cargarEnTabla() {
+    var combo = document.getElementById("empresa");
+  var tabla = document.getElementById("tablaEmpresas");
+  var selectedOption = combo.options[combo.selectedIndex];
 
+  if (selectedOption.value !== "0") {
+    var id = selectedOption.value;
+    var nombre = selectedOption.text;
+
+    var newRow = tabla.insertRow(tabla.rows.length);
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+
+    cell1.innerHTML = id;
+    cell2.innerHTML = nombre;
+
+    combo.selectedIndex = 0; // Restablece la selección del combo
+  } else {
+    alert("Selecciona un registro válido del combo antes de cargarlo en la tabla.");
+  }
+}
  

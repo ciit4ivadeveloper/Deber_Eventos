@@ -42,6 +42,7 @@
                   <td><select id="empresa" name="empresa">
                       <option value="" disabled selected>Selecciona una empresa</option>
                       </select>
+                      <button onclick="cargarEnTabla()">Agregar</button>
                       <script>
                         // Función para cargar opciones en el combo
                         function cargarCombo() {
@@ -75,6 +76,21 @@
                   </td> 
                 </tr>
                 <tr>
+                    <td><label for="ListaEmpresas">ListaEmpresas:</label></td>
+                    <td><table id="tablaEmpresas">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Nombre</th> 
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Aquí se cargarán las filas de la tabla -->
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                <tr>
                     <td></td>
                     <td>
                       <button onclick="guardar_producto()" class="button">Guardar</button>
@@ -82,6 +98,7 @@
                     </td>
                   </tr>
               </table>
+              
             </center>
     
     </body>
