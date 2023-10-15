@@ -4,6 +4,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
+    width: 265px;
   }
   
   /* Estilo para los botones */
@@ -27,7 +28,7 @@ input {
   table {
     background-color: #f0f0f0;
     border-collapse: collapse;
-    width: 30%;
+    width: 35%;
   }
   
   /* Estilo para las celdas de la tabla */
@@ -107,5 +108,19 @@ select {
 
 /* Aplicar justificación a la derecha en un label */
 label.texto-derecha {
+  text-align: right;
+}
+
+/* Cambiar el fondo de un campo de entrada específico con el ID "ruc" */
+#nombreEmpresa {
+  pointer-events: none;
+  background-color: #f9bd57;
+  font-family: Calibri Light, sans-serif;
+  width: 300px;
+  text-align: center;  
+  margin-left: auto;  
+}
+
+.mi-div {
   text-align: right;
 }
