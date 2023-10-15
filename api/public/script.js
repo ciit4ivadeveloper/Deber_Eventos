@@ -1,36 +1,3 @@
-function guardar() {
-
-    let codigo_ = document.getElementById('codigo').value
-    let nombre_ = document.getElementById('nombre').value
-    let valor_ = document.getElementById('valor').value
-
-    let data = { codigo:codigo_, nombre:nombre_, valor:valor_ }
-
-    return new Promise((resolve, reject) => {
-        const request_options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' // Indicar que se envían datos JSON
-            },
-            body: JSON.stringify(data) // Convertir los datos a JSON
-        };
-
-        fetch('/producto', request_options)
-            .then((data) => resolve(data.json()))
-            .catch((error) => reject(`[error]: ${error}`));
-    })
-}
-
-function guardar_producto() {
-    guardar()
-        .then( (response) => {
-            alert('Registro exitoso.')
-        } )
-        .catch( (error) => {
-            alert('Error al ingresar.')
-        } )
-}
-
 function listar_empresa() {
     var comboBox = document.getElementById("empresa");
 
@@ -60,7 +27,7 @@ function listar_empresa() {
 }
  
 function cargarEnTabla() {
-    var combo = document.getElementById("empresa");
+  var combo = document.getElementById("empresa");
   var tabla = document.getElementById("tablaEmpresas");
   var selectedOption = combo.options[combo.selectedIndex];
 
@@ -71,7 +38,7 @@ function cargarEnTabla() {
     var newRow = tabla.insertRow(tabla.rows.length);
     var cell1 = newRow.insertCell(0);
     var cell2 = newRow.insertCell(1);
-
+    cell1.style.display = "none"; 
     cell1.innerHTML = id;
     cell2.innerHTML = nombre;
 
@@ -81,3 +48,62 @@ function cargarEnTabla() {
   }
 }
  
+function guardar() {
+
+    let ruc_ = document.getElementById('ruc').value
+    let cedula_ = document.getElementById('cedula').value
+    let nombre_ = document.getElementById('nombre').value
+    let apellido_ = document.getElementById('apellido').value
+    let email_ = document.getElementById('email').value
+    let domicilio_ = document.getElementById('domicilio').value
+    let telefono_ = document.getElementById('telefono').value
+    let tabla = document.getElementById("tablaEmpresas");
+    const empresas_ = []; 
+
+    // Recorre las filas de la tabla
+    for (var i = 1; i < tabla.rows.length; i++) {
+        var fila = tabla.rows[i];
+        var celda = fila.cells[0];
+        // Accede al contenido de la celda y muestra en la consola 
+        console.log(celda.innerText);
+        empresas_.push({ empresa: { _id: celda.innerText } }); 
+        
+    }  
+
+    // Crea un objeto JSON con los datos necesarios de representante legal
+    let data = { ruc:ruc_, 
+                 cedula:cedula_, 
+                 nombre:nombre_, 
+                 apellido:apellido_,
+                 email:email_,
+                 domicilio:domicilio_,
+                 telefono:telefono_,
+                 empresas: empresas_}
+
+    console.log(data);
+
+    return new Promise((resolve, reject) => {
+        const request_options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Indicar que se envían datos JSON
+            },
+            body: JSON.stringify(data) // Convertir los datos a JSON
+        };
+
+        fetch('/representantelegal', request_options)
+            .then((data) => resolve(data.json()))
+            .catch((error) => reject(`[error]: ${error}`));
+    })
+}
+
+function guardar_representantelegal() {
+    guardar()
+        .then( (response) => {
+            alert('Registro exitoso.')
+        } )
+        .catch( (error) => {
+            alert('Error al ingresar.')
+        } )
+}
+
