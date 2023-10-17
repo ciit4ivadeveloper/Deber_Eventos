@@ -24,7 +24,7 @@ routes.post('/', function(req, res){
         .then((data) => {
             // Emitir una notificación de empresa asignada por WebSocket.
             const asignacionEmpresa = {
-                representanteLegalId: req.body.representanteLegalId, // Asegúrate de obtener el ID del representante legal de alguna manera.
+                representanteLegalId: req.body._id, // Asegúrate de obtener el ID del representante legal de alguna manera.
                 nombreEmpresa: req.body.nombre, // Asegúrate de obtener el nombre de la empresa asignada de alguna manera.
                 
             };  

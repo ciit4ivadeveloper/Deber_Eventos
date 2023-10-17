@@ -1,9 +1,25 @@
 const Model = require('./model')
-
+const ModelRepresentante = require('../representantelegal/model')
+ 
 async function agregarEmpresa( dato ) {
     const resultado = await new Model( dato )
     return resultado.save()
-}
+} 
+
+/*
+async function agregarEmpresa( dato ) {
+    const resultado = await new Model( dato )
+    const resultadoEmpresa = resultado.save()
+    if(dato.representante != null){
+        representante = {_id : dato.representante}
+        const asignarRepresentante = await ModelRepresentante.findOne(representante)
+        asignarRepresentante.empresas.push(resultado._id)        
+        const resultadoRepresentante = await asignarRepresentante.save()
+
+    }
+    return resultadoEmpresa
+}*/
+
 
 async function obtenerEmpresa( filtro ) {
     let mi_filtro = {}

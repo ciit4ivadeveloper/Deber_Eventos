@@ -1,6 +1,6 @@
 /* Estilo para los campos de entrada de texto */
 input {
-    padding: 10px;
+    padding: 6px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -9,13 +9,32 @@ input {
   
   /* Estilo para los botones */
   button {
-    padding: 10px 8px;
-    background-color: #0074d9;
+    padding: 8px 8px;
+    background-color: #0f9b26;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .button-rojo {
+    padding: 8px 8px;
+    background-color: #d90000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .button-azul {
+    padding: 8px 8px;
+    background-color: #052598;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
   
   /* Estilo para etiquetas de formulario */
   label {
@@ -114,7 +133,7 @@ label.texto-derecha {
 /* Cambiar el fondo de un campo de entrada específico con el ID "ruc" */
 #nombreEmpresa {
   pointer-events: none;
-  background-color: #f9bd57;
+  background-color: #e3f1aea9;
   font-family: Calibri Light, sans-serif;
   width: 300px;
   text-align: center;  
@@ -122,5 +141,18 @@ label.texto-derecha {
 }
 
 .mi-div {
-  text-align: right;
+  text-align: left;
+}
+  
+
+.container {
+  width: 50%; /* Ancho del div principal (ajusta según tus necesidades) */
+  margin: 0 auto; /* Auto-margen horizontal para centrar el div */
+  text-align: center; /* Alinea el contenido interno al centro */
+}
+
+/* Estilo para el div interno (alineado a la derecha) */
+.inner-div {
+  text-align: left; /* Alineación a la derecha para el contenido interno */
+  width: 47%;
 }
