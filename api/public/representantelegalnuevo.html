@@ -12,7 +12,8 @@
                 forceNet: true
             })
             socket.on('asignacionEmpresa', (data)=>{  
-            document.getElementById('nombreEmpresa').value = 'Se le ha asignado una nueva empresa: '+data.nombreEmpresa;
+            var nombreEmpresaElement = document.getElementById('nombreEmpresa');
+            nombreEmpresaElement.value = 'Se le ha asignado una nueva empresa: '+data.nombreEmpresa;
             cargarCombo();
            
             var tabla = document.getElementById("tablaEmpresas");  
@@ -22,7 +23,10 @@
             cell1.style.display = "none"; 
             cell1.innerHTML = data.representanteLegalId;
             cell2.innerHTML = data.nombreEmpresa;
-            
+
+            setTimeout(function() {
+                nombreEmpresaElement.value = ''; // Borra el valor del campo
+            }, 4000); // 4000 milisegundos (4 segundos) 
             })
           </script>
           
