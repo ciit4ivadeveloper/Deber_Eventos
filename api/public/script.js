@@ -38,7 +38,8 @@ function cargarEnTabla() {
     var newRow = tabla.insertRow(tabla.rows.length);
     var cell1 = newRow.insertCell(0);
     var cell2 = newRow.insertCell(1);
-    cell1.style.display = "none"; 
+    //cell1.style.display = "none";
+
     cell1.innerHTML = id;
     cell2.innerHTML = nombre;
 
@@ -61,7 +62,7 @@ function guardar() {
     const empresas_ = []; 
 
     // Recorre las filas de la tabla
-    for (var i = 1; i < tabla.rows.length; i++) {
+    for (var i = 0; i < tabla.rows.length; i++) {
         var fila = tabla.rows[i];
         var celda = fila.cells[0];
         // Accede al contenido de la celda y muestra en la consola 
